@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .padre {
+            background-color: green;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-end;
+            height: 500px;
+        }
+
+        .hijo {
+            background-color: yellow;
+            height: 200px;
+            width: 50px;
+            border: 2px solid black;
+
+        }
+
+        #h1 {
+            order: 1;
+            background-color: red;
+            
+        }
+
+        #h2 {
+            order: 2;
+        }
+
+        #h3 {
+            order: 3;
+        }
+
+        #h4 {
+            order: 4;
+        }
+
+        #h5 {
+            order: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="padre">
+        <div class="hijo" id="h1">Hijo 1</div>
+        <div class="hijo" id="h2">Hijo 2</div>
+        <div class="hijo" id="h3">Hijo 3</div>
+        <div class="hijo" id="h4">Hijo 4</div>
+        <div class="hijo" id="h5">Hijo 5</div>
+
+    </section>
+</body>
+
+</html>
+
+
+<!--
+Introduccion
+
+1. Flexbox layout es un modelo de layout(contenedores) al igual que grid que nos ayuda en el alineamiento,direccion y orden de los elementos.
+2. Principal caracteristicas es la capacidad de modificar la altura y la anchura de los elemento para adaptar los espacios disponibles de la mejor manera en cualquiera de los dispositivos.
+3. Destaca de este layout su facil uso y su simplificadad, ya que con poco codigo puedes realizar diseños complejos.
+
+Compatibilidad con navegadores (Mostrar pagina caniuse)
+1. Flexbox es compatible con las ultias versiones de los navegadores, simplemente tener cuidado con internet explore, como siempre. ya que debereis de añadir algun prefijo que otro -ms-flex-order
+
+
+Elementos basicos(Para entender bien flex debemos de conocer algunas cosas basicas.)
+1. La disposicion de flexbox estara constituida entre el padre(caja flexible) y sus hijos (elementos flexible).
+2. En esta familia "Flex" el que manda es el padre hasta que un hijo se quiera revelar. 
+
+Como empezar
+1. Nombrando display flex a su padre. De esta manera convierte la caja contenedor en caja flexible(flexbox).
+2. Existe tambien inline-flex el cual no recomiendo y por eso solo voy ha decir que hace referencia al contenedor en el caso que quiera poner un contenedor junto a otro. Muy rara vez hace falta esto.
+
+3. Podemos dividir las propiedades en 2 grupos.
+
+*Propiedades para el padre.
+
+- Flex-directión.
+    + Esta propiedad nos permite manejar la direccion de los hijos ya sea en columnas o en filas incluso invirtiendo su orden
+    ++ Con otro tipo de layout seria casi imposible invertir el orden y tendriamos que tirar de javascript para hacer esto
+
+
+
+- Flex-wrap
+    + con flex wrap podemos indicarle si queremos tener todos los hijos en una misma linea o en multilinea dependiendo del tamaño de los hijos propiedades para los hijos.
+- Flex-Flow
+    + Es la forma rapida de implementar o unificar las otras dos propiedades anteriores.
+
+- Justify-content
+    + Con esta propiedad nos permite alinear sus hijos de diferente forma y de distribur los espacios entre hijos siempre en el eje X.
+     -flex-start y flex-end: se alinea al principio o al final del contenedor  (cuidado!! no es invertir).
+     -center: logicamente lo alinea en el centro horizontal.  
+     -space-between: siempre tendra la misma separacion entre item quedando alineado el primero item y el ultimo en los extremos.
+     -space-around: siempre tendra la misma separacion entre item siempre empezando por los espacio en los extremos.
+
+- Aling-content
+    +Con esta propiedad nos permite alinear sus hijos de diferente forma y de distribur los espacios entre hijos siempre en el eje y. Esta propiedad sólo tiene efecto cuando el contenedor flexible es multi-línea, 
+
+- Aling-item
+    + Muy similar al justify-content pero en esta ocasion nos referimos al eje Y.
+     -flex-start y flex-end situamos sus hijos en al principio o al final del eje Y.
+     -Center: logicamente lo alinea en el centro del eje Y. 
+     -strech: estila el alto del item en toda la columna(siempre y cuando no tenga alto definido)
+     -basiline: alinea los item basandose en las líneas base de cada item.(siempre y cuando no tenga alto definido)
+
+     Cuantas veces nos hemos peleado para centrar un div tanto vertical como horizontal. Yo muchas
+
+
+
+*Propiedades para los items hijos
+
+Por defecto el tamaño de los hijos se define por el tamaño de su contenido.
+
+- Order: 
+    Nos ayuda a ordenar los items dentro de un contenedor. Los elementos iran ordenados ascendentemente en caso de igualdad de valor iran ordenados por el orden que tenga en el DOM.
+
+-Flex-grow: Especifica el factor de crecimiento. Define el tamaño que crecera un hijo respecto a sus hermanos siempre que haya espacio disponibles en el contenedor, el valor por defecto es 0. Si tienen el mismo valor tendran el mismo tamaño.
+-flex-shrink: Lo contrario de flex-row, especifica el factor de encogimiento por defecto el valor inicia es 1 y el valor 0 es representa el valor normal 
+-flex-basic: actua igual que un width o un height permitiendo establecer el ancho o alto del hijo.
+-flex La propiedad flex es el método shorthand o forma rápida para especificar en una sola propiedades los valores de flex-grow, flex-shrink y flex-basis.  
+-->
